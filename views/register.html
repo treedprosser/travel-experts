@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script>
+        // validates form based on required fields
+function validate(myForm) {
+    let fname = document.getElementById("firstname");
+    let lname = document.getElementById("lastname");
+    let postal = document.getElementById("postalcode");
+    // regular expression to match postal code
+    let regex = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;
+
+    if (fname.value == "" || lname.value == "") {
+        alert("Please enter your first and last name");
+        fname.focus();
+        return false;
+    }
+    if (postal.value == "") {
+        alert("Please enter your postal code");
+        postal.focus();
+        return false;
+    } else if (!regex.test(postal.value)) {
+        alert("Please enter a valid postal code");
+        postal.focus();
+        return false;
+    }
+    return confirm("Are you ready to submit?");
+}
+
+// display descriptions of the different form fields
+function showTip(id) {
+    document.getElementById(id).style.visibility = 'visible';
+}
+
+// hide descriptions of the different form fields
+function hideTip(id) {
+    document.getElementById(id).style.visibility = 'hidden';
+}
+    </script>
+</head>
+<body>
+    <!-- Descriptions of the fields in the form below -->
+    <p id="fnameInfo">Enter your first name here</p>
+    <p id="lnameInfo">Enter your last name here</p>
+    <p id="passwordInfo">Enter your password here</p>
+    <p id="postalInfo">Enter your postal code here (X9X 9X9 format)</p>
+    <p id="ageInfo">Enter your age here</p>
+    <p id="birthdayInfo">Enter your birthday here</p>
+
+    <!-- Registration form with JS script attached for validation -->
+    <form action="bouncer.php" method="get" id="customerForm">
+        <label for="firstname">First Name: </label>
+        <input type="text" id="firstname" name="fname" 
+        onfocus="showTip('fnameInfo');"
+        onblur="hideTip('fnameInfo');">
+        <br>
+        <label for="lastname">Last Name: </label>
+        <input type="text" id="lastname" name="lname" 
+        onfocus="showTip('lnameInfo');"
+        onblur="hideTip('lnameInfo');">
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" required
+        onfocus="showTip('passwordInfo');"
+        onblur="hideTip('passwordInfo');">
+        <br>
+        <label for="postalcode">Postal Code: </label>
+        <input type="text" id="postalcode" name="postalcode" 
+        onfocus="showTip('postalInfo');"
+        onblur="hideTip('postalInfo');">
+        <br>
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age" min="1" 
+        onfocus="showTip('ageInfo');"
+        onblur="hideTip('ageInfo');">
+        <br>
+        <label for="bday">Birthdate: </label>
+        <input type="date" id="bday" name="bday" 
+        onfocus="showTip('birthdayInfo');"
+        onblur="hideTip('birthdayInfo');">
+        <br>
+        <label for="comments">Please add any comments: </label>
+        <textarea id="comments" name="comments" placeholder="Additional Comments"></textarea>
+        <br>
+        <button type="submit" onclick="return validate(this.form);">Submit</button>
+        <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
+    </form>
+</body>
+</html>
