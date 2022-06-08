@@ -2,7 +2,7 @@
 Team 4: Tallis MacDonald, Woody McBeath, Trevor Prosser */
 
 body{
-    background-color:lemonchiffon;
+    background-color:rgb(219, 215, 174);
 }
 header{
     float: center;
@@ -17,7 +17,7 @@ header{
     font-size:225%;
     padding-top: 2%;
     padding-bottom: 2%;
-    border-bottom: double, darkkhaki;
+    border-bottom:5px double;
 }
 p{
     float: left;
