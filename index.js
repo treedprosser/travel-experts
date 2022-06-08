@@ -42,8 +42,15 @@ app.get("/index", (req,res)=>{
 });
 
 // app.get to render the contact information page
-app.get("/contact", (req, res)=>{
-    res.render("contact");
+app.get("/contact", (req, res) => {
+    let con = getConnection();
+    con.connect((err) => {
+        if (err) throw err;
+        console.log("connection successful");
+        con.query("select AgencyId, AgncyCity from agencies", (err, result, fields) => {
+            res.render("contact", { result: result });
+        });
+    });
 });
 
 // app.get to render the registration
