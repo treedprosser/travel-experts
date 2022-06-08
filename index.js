@@ -33,6 +33,30 @@ var server = app.listen(port, (err)=>{
     console.log("Server started on port " +port);
 });
 
+// app.get's to render the home page
+app.get("/", (req,res)=>{
+    res.render("index");
+});
+app.get("/index", (req,res)=>{
+    res.render("index");
+});
+
+// app.get to render the contact information page
+app.get("/contact", (req, res)=>{
+    res.render("contact");
+});
+
+// app.get to render the registration
+app.get("/register", (req, res)=>{
+    res.render("register");
+});
+
+// app.get to render the travel packages
+app.get("/travelpackages", (req, res)=>{
+    res.render("travelpackages");
+});
+
+
 //404 page
 app.use((req,res, next)=>{
     res.status(404).render("404");
