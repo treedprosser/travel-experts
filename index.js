@@ -11,7 +11,7 @@ const mysql = require("mysql");
 //Setting up EJS and setting paths
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.static("media"));
 
