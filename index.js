@@ -15,7 +15,7 @@ app.set("view engine", "ejs")
 app.use(express.static("public"));
 app.use(express.static("media"));
 
-// connect to the travelexperts database
+// Connect to the travelexperts database
 function getConnection() {
     let con = mysql.createConnection({
         host: 'localhost',
