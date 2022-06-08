@@ -10,7 +10,7 @@
     let postal = document.getElementById("postalcode");
     // regular expression to match postal code
     let regex = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;
-
+    // check for valid data in form fields before submitting
     if (fname.value == "" || lname.value == "") {
         alert("Please enter your first and last name");
         fname.focus();
@@ -26,7 +26,7 @@
         return false;
     }
     return confirm("Are you ready to submit?");
-}
+    }
     </script>
 </head>
 <body>
@@ -64,9 +64,7 @@
         <input type="email" id="address" name="CustEmail">
         <br>
         <label for="password">Password: </label>
-        <input type="password" id="password" name="password" required
-        onfocus="showTip('passwordInfo');"
-        onblur="hideTip('passwordInfo');">
+        <input type="password" id="password" name="password" required>
         <br>
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
