@@ -1,0 +1,53 @@
+/*CRPG207 Threaded Project for OOSD
+Team 4: Tallis MacDonald, Woody McBeath, Trevor Prosser */
+
+body{
+    background-color:lemonchiffon;
+}
+header{
+    float: center;
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 1%;
+    width: 90%;
+    background-color:lightgreen;
+    text-align: center;
+    font-weight: bold;
+    font-size:225%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: double, darkkhaki;
+}
+p{
+    float: left;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 1%;
+}
+form{
+    float: left;
+    text-align: justify;
+    padding-left:1%;
+    padding-right:1%;
+    font-size:110%;
+    margin:1%;
+    background-color: cyan;
+    width:50%;
+}
+nav{
+    position:fixed;
+    bottom:1%;
+    width:80%;
+    margin-top:1%;
+    margin-bottom:1%;
+    margin-left: 9%;
+    margin-right: 9%;
+    border-top: double, darkkhaki;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
