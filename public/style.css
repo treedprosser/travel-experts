@@ -19,7 +19,7 @@ header{
     font-size:225%;
     padding-top: 2%;
     padding-bottom: 2%;
-    border-bottom:5px double;
+    border:5px outset;
 }
 p{
     float: left;
@@ -59,17 +59,21 @@ form{
 nav{
     position:fixed;
     bottom:1%;
+    left:1%;
     width:80%;
     margin-top:1%;
-    margin-bottom:1%;
     margin-left: 9%;
     margin-right: 9%;
     border-top: double, darkkhaki;
     text-align: center;
     font-size: 150%;
     font-weight: bold;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    font-family: "Helvetica Neue", sans-serif;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: bisque;
+    border-radius:10px;
+    border: 3px groove;
 }
 footer {
     position: fixed;
