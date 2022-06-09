@@ -1,0 +1,35 @@
+TO DO:
+
+FRONT END:
+    Home
+        made to comply with style sheet
+        images formatted to fit well with the style of the website
+        'about' section?
+        (optional?) previews of upcoming or 'hot' deals/packages that lead the to packages page
+    Contacts
+        made to comply with style Sheet
+        draws from database to generate agent and agency contact information
+    Packages
+        made to comply with style sheet
+        draws from database and generates vacation Packages
+        leads user to register in order to order a vacation package
+    Register
+        made to comply with style sheet
+        form collects and verifies customer information
+        leads to a 'thanks for registering' page?
+
+    Style Sheet
+        Lots to be done, make the site look good
+    404
+        made to comply with style sheet
+    Nav bar
+        modular to be applied to each page
+        made to comply with style sheet
+    User Experience
+        passover and note any changes that coule be made to enhance the user Experience
+
+BACK END:
+    index.js
+        Write functions to render each page
+            some pages require more advanced calls to request and handle information from the database
+        write functions to receive data from certain pages and input to the database
