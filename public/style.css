@@ -38,6 +38,11 @@ form{
     background-color: cyan;
     width:50%;
 }
+table{
+    table-layout:auto;
+    width:auto;
+    background-color: aliceblue;
+}
 .about {
     display: flex;
     justify-content: center;
