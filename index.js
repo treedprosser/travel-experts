@@ -41,14 +41,21 @@ app.get("/index", (req,res)=>{
     res.render("index");
 });
 
-// app.get to render the contact information page
+// app.get to render the contact information page and query the database
 app.get("/contact", (req, res) => {
     let con = getConnection();
     con.connect((err) => {
         if (err) throw err;
         console.log("connection successful");
-        con.query("select AgencyId, AgncyCity from agencies", (err, result, fields) => {
-            res.render("contact", { result: result });
+        con.query("select * from agencies", (err, result) => {
+            if (err) throw err;
+            con.query("select * from agents where AgencyId=1", (err, cgyResult) => {
+                if (err) throw err;
+                con.query("select * from agents where AgencyId=2", (err, okoResult) => {
+                    if (err) throw err;
+                    res.render("contact", { result: result, cgyResult: cgyResult, okoResult: okoResult });
+                });
+            });
         });
     });
 });

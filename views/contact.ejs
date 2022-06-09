@@ -4,16 +4,45 @@
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-			<h2>The Travel Experts</h2>
-			
-			<h3>Please Select an Agency</h3>
-			Agency: <select name="AgencyId">
-				<option value="">Select an agency</option>
-				<% result.forEach((agency) => { %>
-				<option value="<%= agency.AgencyId %>">
-					<%= agency.AgncyCity %>
-				</option>
-				<% }); %>
-			</select>
+		<h2>The Travel Experts</h2>
+		<h4>Agency Information:</h4>
+		<table border="1">
+			<% result.forEach((agency) => { %>
+				<tr>
+					<td><%= agency.AgncyCity %></td>
+					<td><%= agency.AgncyAddress %></td>
+					<td><%= agency.AgncyProv %></td>
+					<td><%= agency.AgncyPostal %></td>
+				</tr>
+				<tr>
+					<td>Phone: </td>
+					<td><%= agency.AgncyPhone %></td>
+				</tr>
+			<%  }); %>
+		</table>
+		<br>
+		<h4>Calgary Agents:</h4>
+		<table border="1">
+			<% cgyResult.forEach((agent) => { %>
+				<tr>
+					<td><%= agent.AgtFirstName %></td>
+					<td><%= agent.AgtLastName %></td>
+					<td><%= agent.AgtBusPhone %></td>
+					<td><%= agent.AgtEmail %></td>
+				</tr>
+			<%  }); %>
+		</table>
+		<br>
+		<h4>Okotoks Agents:</h4>
+		<table border="1">
+			<% okoResult.forEach((agent) => { %>
+				<tr>
+					<td><%= agent.AgtFirstName %></td>
+					<td><%= agent.AgtLastName %></td>
+					<td><%= agent.AgtBusPhone %></td>
+					<td><%= agent.AgtEmail %></td>
+				</tr>
+			<%  }); %>
+		</table>
 	</body>
 </html>
