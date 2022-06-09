@@ -3,12 +3,9 @@ TO DO:
 FRONT END:
     Home
         made to comply with style sheet
-        images formatted to fit well with the style of the website
-        'about' section?
         (optional?) previews of upcoming or 'hot' deals/packages that lead the to packages page
     Contacts
         made to comply with style Sheet
-        draws from database to generate agent and agency contact information
     Packages
         made to comply with style sheet
         draws from database and generates vacation Packages
