@@ -20,7 +20,6 @@ FRONT END:
     404
         made to comply with style sheet
     Nav bar
-        modular to be applied to each page
         made to comply with style sheet
     User Experience
         passover and note any changes that coule be made to enhance the user Experience
