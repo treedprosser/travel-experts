@@ -79,9 +79,10 @@
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
+    <% packageResult.forEach((packages) => { %>  
     <table.register border="1">
         <th>Your Package</th><br />
-        <% packageResult.forEach((packages) => { %>
+
 				
             <tr>
                 <td><%= packages.PkgName %></td><br />
