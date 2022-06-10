@@ -60,14 +60,23 @@ app.get("/contact", (req, res) => {
     });
 });
 
+
+//app.get to render the travel packages from database
+app.get("/travelpackages", (req, res) => {
+	let con = getConnection();
+	con.connect((err) => {
+		if (err) throw err;
+		console.log("connection successful");
+		con.query("select * from packages", (err, tpResult) => {
+			if (err) throw err;
+			res.render("travelpackages", {tpResult: tpResult});
+		});
+	});	
+});
+
 // app.get to render the registration
 app.get("/register", (req, res)=>{
     res.render("register");
-});
-
-// app.get to render the travel packages
-app.get("/travelpackages", (req, res)=>{
-    res.render("travelpackages");
 });
 
 
