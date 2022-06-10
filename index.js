@@ -85,11 +85,11 @@ app.get("/register", (req, res)=>{
 		con.query("select AgentId, AgtFirstName, AgtLastName from agents", (err, result)=>{
 			if(err) throw err;
             var agentsResult = result;
-            var packageId = req.body.PackageId;
+            var packageId = req.query.PackageId;
             con.query({sql:"select * from packages where PackageId=?", values:[packageId]}, (err, result)=>{
                 if(err) throw err;
                 var packageResult= result;
-                console.log(packageResult);
+                //console.log(packageResult);
                 res.render("register",{agentsResult:agentsResult, packageResult:packageResult});
                 con.end((err)=>{
                     if(err) throw err;

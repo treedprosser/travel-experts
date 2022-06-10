@@ -79,15 +79,15 @@
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
-    <table.register>
-        <th>Your Package</th>
+    <table.register border="1">
+        <th>Your Package</th><br />
         <% packageResult.forEach((packages) => { %>
 				
             <tr>
-                <td><%= packages.PkgName %></td>
-                <td><%= packages.PkgStartDate %></td>
-                <td><%= packages.PkgEndDate %></td>
-                <td><%= packages.PkgBasePrice %></td>
+                <td><%= packages.PkgName %></td><br />
+                <td>Starts: <%= packages.PkgStartDate %></td><br />
+                <td>Ends: <%= packages.PkgEndDate %></td><br />
+                <td>Price: <%= packages.PkgBasePrice %></td><br />
                 <%  }); %>
     </table.register>
     <nav>
