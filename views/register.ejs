@@ -70,12 +70,23 @@
         <label for="agent">Agent Id: </label>
         <select name="AgentId">
             <option value="">Select Agent Id</option>
-            <% result.forEach((agent)=>{%>
+            <% agentsResult.forEach((agent)=>{%>
             <option value="<%=agent.AgentId%>"><%=agent.AgtFirstName%> <%=agent.AgtLastName%></option>
             <% }); %> </select><br />
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
+    <table.register>
+        <th>Your Package</th>
+        <% packageResult.forEach((packages) => { %>
+				
+            <tr>
+                <td><%= packages.PkgName %></td>
+                <td><%= packages.PkgStartDate %></td>
+                <td><%= packages.PkgEndDate %></td>
+                <td><%= packages.PkgBasePrice %></td>
+                <%  }); %>
+    </table.register>
     <nav>
         Navigation:
         <a href="index">Home <img src="arr1.gif" /></a>

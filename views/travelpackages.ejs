@@ -17,8 +17,8 @@
 					<td><%= packages.PkgName %></td>
 					<td><%= packages.PkgStartDate %></td>
 					<td><%= packages.PkgEndDate %></td>
-					<td>$<%= packages.PkgBasePrice %></td>
-					<td><button onclick="window.location.href='/register'">Order Package</button></td>	
+					<td><%= packages.PkgBasePrice %></td>
+					<td><button name="<%=packages.PackageId%>" onclick="window.location.href='/register'">Order Package</button></td>	
 				</tr>
 			<%  }); %>
 		</table>

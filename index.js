@@ -82,11 +82,18 @@ app.get("/register", (req, res)=>{
     var con = getConnection();
 	con.connect((err)=>{
 		if(err) throw err;
-		con.query("select AgentId, AgtFirstName, AgtLastName from agents", (err, result, fields)=>{
+		con.query("select AgentId, AgtFirstName, AgtLastName from agents", (err, result)=>{
 			if(err) throw err;
-			res.render("register",{result:result, fields:fields});
-			con.end((err)=>{
-				if(err) throw err;
+            var agentsResult = result;
+            var packageId = req.body.PackageId;
+            con.query({sql:"select * from packages where PackageId=?", values:[packageId]}, (err, result)=>{
+                if(err) throw err;
+                var packageResult= result;
+                console.log(packageResult);
+                res.render("register",{agentsResult:agentsResult, packageResult:packageResult});
+                con.end((err)=>{
+                    if(err) throw err;
+                });
 			});
 		});
 	});
