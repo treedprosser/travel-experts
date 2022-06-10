@@ -70,8 +70,11 @@ app.get("/travelpackages", (req, res) => {
 		con.query("select * from packages", (err, tpResult) => {
 			if (err) throw err;
 			res.render("travelpackages", {tpResult: tpResult});
-		});
-	});	
+			con.end((err) => {
+				if (err) throw err;
+			});
+		});	
+	});
 });
 
 // app.get to render the registration
