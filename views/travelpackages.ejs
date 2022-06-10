@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Travel Packages</title>
-		<link href="style.css" rel="stylesheet" type="text/css" />
-	</head>	
-	<body>
-		<header>Travel Packages</header>
-		<h2>Day of The Dead</h2>
-		<h3>Travel to Mexico for their annual Day of the Dead celebration</h3>
-		</br>
-		<h2>Norwegian Winter Wonderland</h2>
-		<h3>Enjoy a Scandanavian escape to Norway </h3>
-		</br>
-		<h2>Netherlands Spring Tulips</h2>
-		<h3>Stroll the fields of tulips during this springtime escape to Keukenhof</h3>
-		</br>
-		<h2>Summer Oregon Sand Dunes</h2>
-		<h3>Embark on an adventure and cruise the sandy dunes of Oregon  </h3>
-		<nav>
-			Navigation:
-			<a href="index">Home <img src="arr1.gif" /></a>
-			
-			<a href="contact">Contact Us <img src="arr2.gif" /></a>
-			
-			<a href="travelpackages">Travel Packages <img src="arr3.gif" /></a>
-			
-			<a href="register">Customer Registration <img src="arr4.gif" /></a>
-		</nav>
-	</body>
+	<head><title>Travel Agents</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<h2>Travel Experts Inc</h2>
+		<h4>Travel Packages:</h4>
+		<table border="1">
+		<th>Package Name</th>
+				<th>Package Start Date</th>
+				<th>Package End Date</th>
+				<th>Package Base Price</th>
+				<th>Order Option</th>
+			<% tpResult.forEach((packages) => { %>
+				
+				<tr>
+					<td><%= packages.PkgName %></td>
+					<td><%= packages.PkgStartDate %></td>
+					<td><%= packages.PkgEndDate %></td>
+					<td><%= packages.PkgBasePrice %></td>
+					<td><button type="submit" formaction="/register.js">Order Package</button></td>
+					
+					
+					
+				</tr>
+			<%  }); %>
+		</table>
+	</head>
 </html>
-
+	
 <!-- 
 Photos
 Travel Packages Pics
