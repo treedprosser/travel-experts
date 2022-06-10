@@ -60,7 +60,7 @@ app.get("/contact", (req, res) => {
     });
 });
 
-
+//
 //app.get to render the travel packages from database
 app.get("/travelpackages", (req, res) => {
 	let con = getConnection();
@@ -76,45 +76,9 @@ app.get("/travelpackages", (req, res) => {
 
 // app.get to render the registration
 app.get("/register", (req, res)=>{
-    var con = getConnection();
-	con.connect((err)=>{
-		if(err) throw err;
-		con.query("select AgentId, AgtFirstName, AgtLastName from agents", (err, result, fields)=>{
-			if(err) throw err;
-			res.render("register",{result:result, fields:fields});
-			con.end((err)=>{
-				if(err) throw err;
-			});
-		});
-	});
+    res.render("register");
 });
 
-app.post("/postregister", (req,res)=>{
-	var con = getConnection();
-	con.connect((err)=>{
-		if(err) throw err;
-		var sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `AgentId`) VALUES (?)";
-		var values = [req.body.CustFirstName, req.body.CustLastName, req.body.CustAddress, req.body.CustCity, req.body.CustProv, req.body.CustPostal, req.body.CustCountry, req.body.CustHomePhone, req.body.CustBusPhone, req.body.CustEmail, req.body.AgentId];
-		con.query(sql,[values],(err,result, fields)=>{
-			if(err) throw err;
-			console.log("result="+ result.affectedRows);
-			if (result.affectedRows)
-			{
-				//res.status(200).send(result.affectedRows + " row(s)inserted");
-				res.redirect("/thanks?CustFirstName="+req.body.CustFirstName+"&CustLastName="+req.body.CustLastName);
-			}else{
-				res.status(200).send("insert unsuccessful");
-			}
-			con.end((err)=>{
-				if(err) throw err;
-			});
-		});
-	});
-});
-
-app.get("/thanks", (req,res)=>{
-	res.render("thanks",{CustFirstName:req.query.CustFirstName, CustLastName:req.query.CustLastName});
-});
 
 //404 page
 app.use((req,res, next)=>{
