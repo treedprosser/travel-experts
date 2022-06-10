@@ -43,6 +43,9 @@ table{
     width:auto;
     background-color: aliceblue;
 }
+td {
+    padding: 5px;
+}
 .about {
     display: flex;
     justify-content: center;
