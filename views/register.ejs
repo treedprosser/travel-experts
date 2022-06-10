@@ -33,7 +33,7 @@
 <body>
     <header>Customer Registration</header>
     <!-- Registration form with JS script attached for validation -->
-    <form action="bouncer.php" method="get" id="customerForm">
+    <form action="postregister" method="post" id="customerForm">
         <label for="firstname">First Name: </label>
         <input type="text" id="firstname" name="CustFirstName">
         <br>
@@ -67,6 +67,12 @@
         <label for="password">Password: </label>
         <input type="password" id="password" name="password" required>
         <br>
+        <label for="agent">Agent Id: </label>
+        <select name="AgentId">
+            <option value="">Select Agent Id</option>
+            <% result.forEach((agent)=>{%>
+            <option value="<%=agent.AgentId%>"><%=agent.AgtFirstName%> <%=agent.AgtLastName%></option>
+            <% }); %> </select><br />
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
