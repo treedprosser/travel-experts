@@ -7,46 +7,41 @@
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<header>The Travel Experts</header>
-		<h4>Agency Information:</h4>
-		<table border="1">
+		<header>Meet The Travel Experts!</header>
+		<h4 class="agencies">Agency Information:</h4>
+		<div class="agency-container">
 			<% result.forEach((agency) => { %>
-				<tr>
-					<td><strong><%= agency.AgncyCity %></strong></td>
-					<td><%= agency.AgncyAddress %></td>
-					<td><%= agency.AgncyProv %></td>
-					<td><%= agency.AgncyPostal %></td>
-				</tr>
-				<tr>
-					<td>Phone: </td>
-					<td><%= agency.AgncyPhone %></td>
-				</tr>
+				<div class="agency-info">
+					<p><strong><%= agency.AgncyCity + ", " + agency.AgncyProv %></strong></p>
+					<p><%= agency.AgncyAddress %></p>
+					<p><%= agency.AgncyPostal %></p>
+					<p class="phone">Phone: </p>
+					<p><%= agency.AgncyPhone %></p>
+				</div>
 			<%  }); %>
-		</table>
+		</div>
 		<br>
-		<h4>Calgary Agents:</h4>
-		<table border="1">
+		<h4 class="agents">Calgary Agents:</h4>
+		<div class="agent-container">
 			<% cgyResult.forEach((agent) => { %>
-				<tr>
-					<td><%= agent.AgtFirstName %></td>
-					<td><%= agent.AgtLastName %></td>
-					<td><%= agent.AgtBusPhone %></td>
-					<td><%= agent.AgtEmail %></td>
-				</tr>
+				<div class="agent-info">
+					<p><%= agent.AgtFirstName +  " " + agent.AgtLastName %></p>
+					<p><%= agent.AgtBusPhone %></p>
+					<p><%= agent.AgtEmail %></p>
+				</div>
 			<%  }); %>
-		</table>
+		</div>
 		<br>
-		<h4>Okotoks Agents:</h4>
-		<table border="1">
+		<h4 class="agents">Okotoks Agents:</h4>
+		<div class="agent-container">
 			<% okoResult.forEach((agent) => { %>
-				<tr>
-					<td><%= agent.AgtFirstName %></td>
-					<td><%= agent.AgtLastName %></td>
-					<td><%= agent.AgtBusPhone %></td>
-					<td><%= agent.AgtEmail %></td>
-				</tr>
+				<div class="agent-info">
+					<p><%= agent.AgtFirstName +  " " + agent.AgtLastName %></p>
+					<p><%= agent.AgtBusPhone %></p>
+					<p><%= agent.AgtEmail %></p>
+				</div>
 			<%  }); %>
-		</table>
+		</div>
 		<nav>
 			<a href="index">Home <img src="arr1.gif" /></a>
 			
