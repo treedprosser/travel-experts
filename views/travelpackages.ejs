@@ -1,50 +1,82 @@
 <!--Travel Packages -TM -->
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 	<title>Travel Packages</title>
 	<!--Reference links for style pages -->
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-	</head>
-	<body>
+	<script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
 	<header>Pick your destination!</header>
-		<h4 class="packages">Travel Packages:</h4>
-		<table border="1">
-			<!-- Table of available Travel packages populated from database - TM -->
+	<h4 class="packages">Travel Packages:</h4>
+	<table border="1">
+		<!-- Table of available Travel packages populated from database - TM -->
 		<th>Package Name</th>
-				<th>Package Start Date</th>
-				<th>Package End Date</th>
-				<th>Package Base Price</th>
-				<th>Order Option</th>
-			<!--Populates table with info for each package on the database - TM -->
-			<% tpResult.forEach((packages) => { let currentDate = new Date().getTime();
-				var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
-				%>
-				<tr>
-					<td><%= packages.PkgName %></td>
-					<!--If statement to flag expired packages and display them as RED and unavailable - TP -->
-					<td <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> class="expired" <% } %>><%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear() %></td>
-					<td><%= month[packages.PkgEndDate.getMonth()] + "-" + packages.PkgEndDate.getDate() + "-" + packages.PkgEndDate.getFullYear() %></td>
-					<td>$<%= packages.PkgBasePrice %></td>
-					<!-- If statement to disable buttons on expired travel packages - WM -->
-					<td><button  <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> disabled="disabled" <% } %> onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
-				</tr>
-			<%  }); %>
-		</table>
-		<!-- Navigation Bar -WM,TP,TM -->
-		<nav>
-			<a href="index">Home <img src="arr1.gif" /></a>
+		<th>Package Start Date</th>
+		<th>Package End Date</th>
+		<th>Package Base Price</th>
+		<th>Order Option</th>
+		<!--Populates table with info for each package on the database - TM -->
+		<% tpResult.forEach((packages) => { let currentDate = new Date().getTime();
+			var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+		%>
+		<tr>
+			<td><%= packages.PkgName %></td>
+			<!--If statement to flag expired packages and display them as RED and unavailable - TP -->
+			<td <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> class="expired" <% } %>><%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear() %></td>
+			<td><%= month[packages.PkgEndDate.getMonth()] + "-" + packages.PkgEndDate.getDate() + "-" + packages.PkgEndDate.getFullYear() %></td>
+			<td>$<%= packages.PkgBasePrice %></td>
+			<!-- If statement to disable buttons on expired travel packages - WM -->
+			<td><button  <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> disabled="disabled" <% } %> onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
+		</tr>
+		<%  }); %>
+	</table>
+	<br>
+	<br>
+	<br>
+	<!-- image carousel to display travel photos - TP -->
+	<div class="slider-container">
+		<div class="slider">
+			<!-- slide 1 -->
+			<div class="slide">
+				<img src="tulips.png" />
+			</div>
+			<!-- slide 2 -->
+			<div class="slide">
+				<img src="windmill.png" />
+			</div>
+			<!-- slide 3 -->
+			<div class="slide">
+				<img src="dayofdead.png" />
+			</div>		  
+			<!-- slide 4 -->
+			<div class="slide">
+				<img src="norway.png" />
+			</div>	
+			<!-- slide 5 -->
+			<div class="slide">
+				<img src="mexico.png" />
+			</div>
+			<!-- Control buttons -->
+			<button class="btn btn-next">></button>
+			<button class="btn btn-prev"><</button>
+		</div>
+	</div>
+	<!-- Navigation Bar -WM,TP,TM -->
+	<nav>
+		<a href="index">Home <img src="arr1.gif" /></a>
 			
-			<a href="contact">Contact Us <img src="arr2.gif" /></a>
+		<a href="contact">Contact Us <img src="arr2.gif" /></a>
 			
-			<a href="travelpackages">Travel Packages <img src="arr3.gif" /></a>
+		<a href="travelpackages">Travel Packages <img src="arr3.gif" /></a>
 			
-			<a href="register">Customer Registration <img src="arr4.gif" /></a>
-		</nav>
-	</body>
+		<a href="register">Customer Registration <img src="arr4.gif" /></a>
+	</nav>
+</body>
 </html>
 	
 <!-- 
