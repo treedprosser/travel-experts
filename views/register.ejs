@@ -37,6 +37,9 @@
     <header>Customer Registration</header>
     <!-- Registration form with JS script attached for validation -->
     <form action="postregister" method="post" id="customerForm">
+        <%packageResult.forEach((packages)=>{ %>
+            <input type="text" name="PackageId" hidden="hidden" value="<%=packages.PackageId%>">
+        <% }); %>
         First Name:
         <input type="text" id="firstname" name="CustFirstName">
         <br>

@@ -15,9 +15,10 @@ FRONT END:
         done    form collects and verifies customer information
         done      leads to a 'thanks for registering' page?
         done    form action changed from bouncer to a 'postform' that can be sent to the server and input into database
+        pushes travel package data to thanks page
     General formatting
-        add whitespace to bottom of each page to prevent nav bar clipping/covering content
-        alternatively move nav bar to top or sides? whatever looks best
+        done    add whitespace to bottom of each page to prevent nav bar clipping/covering content
+        done    dates converted to something nicer and more readable
     Style Sheet
         Lots to be done, make the site look good
             better colour scheme? background images?
@@ -34,4 +35,4 @@ BACK END:
     index.js
         Write functions to render each page
             some pages require more advanced calls to request and handle information from the database
-        write functions to receive data from certain pages and input to the database (postform function from register)
+        done    write functions to receive data from certain pages and input to the database (postform function from register)

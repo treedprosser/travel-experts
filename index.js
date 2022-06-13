@@ -110,8 +110,9 @@ app.post("/postregister", (req,res)=>{
 			console.log("result="+ result.affectedRows);
 			if (result.affectedRows)
 			{
+				console.log(req.body.PackageId);
 				//res.status(200).send(result.affectedRows + " row(s)inserted");
-				res.redirect("/thanks?CustFirstName="+req.body.CustFirstName+"&CustLastName="+req.body.CustLastName);
+				res.redirect("/thanks?CustFirstName="+req.body.CustFirstName+"&CustLastName="+req.body.CustLastName+"&PackageId="+req.body.PackageId);
 			}else{
 				res.status(200).send("insert unsuccessful");
 			}
@@ -123,7 +124,16 @@ app.post("/postregister", (req,res)=>{
 });
 
 app.get("/thanks", (req,res)=>{
-	res.render("thanks",{CustFirstName:req.query.CustFirstName, CustLastName:req.query.CustLastName});
+	var con = getConnection();
+	con.connect((err)=>{
+		if (err) throw err;
+		var packageId= req.query.PackageId;
+		con.query({sql:"select * from packages where PackageId=?", values:[packageId]}, (err, result)=>{
+			if(err) throw err;
+			var packageResult = result;
+			res.render("thanks",{CustFirstName:req.query.CustFirstName, CustLastName:req.query.CustLastName, packageResult:packageResult});
+		});
+	});
 });
 
 //404 page
