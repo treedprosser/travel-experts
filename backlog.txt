@@ -1,5 +1,13 @@
 TO DO:
 
+    FINISHING TOUCHES:
+        STYLING
+            make it look good
+        CODE
+            commenting and 'beautifying'
+
+
+
 FRONT END:
     Home
         made to comply with style sheet
@@ -10,15 +18,19 @@ FRONT END:
         made to comply with style sheet
         done    draws from database and generates vacation Packages
         done    leads user to register in order to purchase a vacation package
+        formatting of table
     Register
         made to comply with style sheet
         done    form collects and verifies customer information
         done      leads to a 'thanks for registering' page?
         done    form action changed from bouncer to a 'postform' that can be sent to the server and input into database
-        pushes travel package data to thanks page
+        done    pushes travel package data to thanks page
     General formatting
         done    add whitespace to bottom of each page to prevent nav bar clipping/covering content
         done    dates converted to something nicer and more readable
+
+        ****go through and make sure all code is 'beautified' and commented!!!***
+
     Style Sheet
         Lots to be done, make the site look good
             better colour scheme? background images?
@@ -34,5 +46,5 @@ FRONT END:
 BACK END:
     index.js
         Write functions to render each page
-            some pages require more advanced calls to request and handle information from the database
+        done    some pages require more advanced calls to request and handle information from the database
         done    write functions to receive data from certain pages and input to the database (postform function from register)
