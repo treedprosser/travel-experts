@@ -3,6 +3,9 @@
 <head>
     <title>Register</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <script>
     // validates form based on required fields
     function validate(myForm) {
@@ -34,7 +37,7 @@
     <header>Customer Registration</header>
     <!-- Registration form with JS script attached for validation -->
     <form action="postregister" method="post" id="customerForm">
-        <label for="firstname">First Name: </label>
+        First Name:
         <input type="text" id="firstname" name="CustFirstName">
         <br>
         <label for="lastname">Last Name: </label>
@@ -70,14 +73,25 @@
         <label for="agent">Agent Id: </label>
         <select name="AgentId">
             <option value="">Select Agent Id</option>
-            <% result.forEach((agent)=>{%>
+            <% agentsResult.forEach((agent)=>{%>
             <option value="<%=agent.AgentId%>"><%=agent.AgtFirstName%> <%=agent.AgtLastName%></option>
             <% }); %> </select><br />
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
+    <% packageResult.forEach((packages) => { %>  
+    <table.register border="1">
+        <th>Your Package</th><br />
+
+				
+            <tr>
+                <td><%= packages.PkgName %></td><br />
+                <td>Starts: <%= packages.PkgStartDate %></td><br />
+                <td>Ends: <%= packages.PkgEndDate %></td><br />
+                <td>Price: <%= packages.PkgBasePrice %></td><br />
+                <%  }); %>
+    </table.register>
     <nav>
-        Navigation:
         <a href="index">Home <img src="arr1.gif" /></a>
         
         <a href="contact">Contact Us <img src="arr2.gif" /></a>

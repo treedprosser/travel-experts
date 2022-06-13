@@ -60,7 +60,7 @@ app.get("/contact", (req, res) => {
     });
 });
 
-//
+
 //app.get to render the travel packages from database
 app.get("/travelpackages", (req, res) => {
 	let con = getConnection();
@@ -70,15 +70,61 @@ app.get("/travelpackages", (req, res) => {
 		con.query("select * from packages", (err, tpResult) => {
 			if (err) throw err;
 			res.render("travelpackages", {tpResult: tpResult});
-		});
-	});	
+			con.end((err) => {
+				if (err) throw err;
+			});
+		});	
+	});
 });
 
 // app.get to render the registration
 app.get("/register", (req, res)=>{
-    res.render("register");
+    var con = getConnection();
+	con.connect((err)=>{
+		if(err) throw err;
+		con.query("select AgentId, AgtFirstName, AgtLastName from agents", (err, result)=>{
+			if(err) throw err;
+            var agentsResult = result;
+            var packageId = req.query.PackageId;
+            con.query({sql:"select * from packages where PackageId=?", values:[packageId]}, (err, result)=>{
+                if(err) throw err;
+                var packageResult= result;
+                //console.log(packageResult);
+                res.render("register",{agentsResult:agentsResult, packageResult:packageResult});
+                con.end((err)=>{
+                    if(err) throw err;
+                });
+			});
+		});
+	});
 });
 
+app.post("/postregister", (req,res)=>{
+	var con = getConnection();
+	con.connect((err)=>{
+		if(err) throw err;
+		var sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `AgentId`) VALUES (?)";
+		var values = [req.body.CustFirstName, req.body.CustLastName, req.body.CustAddress, req.body.CustCity, req.body.CustProv, req.body.CustPostal, req.body.CustCountry, req.body.CustHomePhone, req.body.CustBusPhone, req.body.CustEmail, req.body.AgentId];
+		con.query(sql,[values],(err,result, fields)=>{
+			if(err) throw err;
+			console.log("result="+ result.affectedRows);
+			if (result.affectedRows)
+			{
+				//res.status(200).send(result.affectedRows + " row(s)inserted");
+				res.redirect("/thanks?CustFirstName="+req.body.CustFirstName+"&CustLastName="+req.body.CustLastName);
+			}else{
+				res.status(200).send("insert unsuccessful");
+			}
+			con.end((err)=>{
+				if(err) throw err;
+			});
+		});
+	});
+});
+
+app.get("/thanks", (req,res)=>{
+	res.render("thanks",{CustFirstName:req.query.CustFirstName, CustLastName:req.query.CustLastName});
+});
 
 //404 page
 app.use((req,res, next)=>{

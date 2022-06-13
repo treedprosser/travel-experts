@@ -14,7 +14,7 @@ header{
     background-color:lightgreen;
     border-radius: 5px;
     text-align: center;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Courgette", cursive;
     font-weight: bold;
     font-size:225%;
     padding-top: 2%;
@@ -36,7 +36,7 @@ form{
     font-size:110%;
     margin:1%;
     background-color: cyan;
-    width:50%;
+    width:40%;
 }
 table{
     table-layout:auto;
@@ -46,6 +46,7 @@ table{
 td {
     padding: 5px;
 }
+/* Main Page */
 .about {
     display: flex;
     justify-content: center;
@@ -64,6 +65,35 @@ td {
     width: 200px;
     border-radius: 20px;
 }
+/* Contact Page */
+.agencies, .agents {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+.agency-container, .agent-container {
+    display: flex;
+    justify-content: space-around;
+}
+.agency-info, .agent-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+}
+.agency-info {
+    background-color: #ECB390;
+}
+.agent-info {
+    align-items: center;
+    background-color: #94B49F;
+}
+.phone {
+    text-decoration: underline;
+}
+/* Navigation bar on each page */
 nav{
     position:fixed;
     bottom:5%;
@@ -82,6 +112,13 @@ nav{
     background-color: bisque;
     border-radius:10px;
     border: 3px groove;
+}
+nav a {
+    text-decoration: none;
+    color: #1363DF;
+}
+nav, a:hover{
+    color: #47B5FF;
 }
 footer {
     position: fixed;
