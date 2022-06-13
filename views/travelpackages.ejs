@@ -23,7 +23,7 @@
 					<td><%= packages.PkgName %></td>
 					<td <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> class="expired" <% } %>><%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear() %></td>
 					<td><%= month[packages.PkgEndDate.getMonth()] + "-" + packages.PkgEndDate.getDate() + "-" + packages.PkgEndDate.getFullYear() %></td>
-					<td><%= packages.PkgBasePrice %></td>
+					<td>$<%= packages.PkgBasePrice %></td>
 					<td><button onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
 				</tr>
 			<%  }); %>
