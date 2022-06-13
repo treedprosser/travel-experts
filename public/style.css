@@ -38,6 +38,7 @@ form{
     background-color: cyan;
     width:40%;
 }
+/* Travel Packages */
 table{
     table-layout:auto;
     width:auto;
@@ -45,6 +46,10 @@ table{
 }
 td {
     padding: 5px;
+}
+.expired {
+    color: red;
+    font-weight: bold;
 }
 /* Main Page */
 .about {

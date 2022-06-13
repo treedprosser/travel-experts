@@ -16,11 +16,10 @@
 				<th>Package End Date</th>
 				<th>Package Base Price</th>
 				<th>Order Option</th>
-			<% tpResult.forEach((packages) => { %>
-				
+			<% tpResult.forEach((packages) => { let currentDate = new Date().getTime(); %>
 				<tr>
 					<td><%= packages.PkgName %></td>
-					<td><%= packages.PkgStartDate %></td>
+					<td <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> class="expired" <% } %>><%= packages.PkgStartDate %></td>
 					<td><%= packages.PkgEndDate %></td>
 					<td><%= packages.PkgBasePrice %></td>
 					<td><button onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
