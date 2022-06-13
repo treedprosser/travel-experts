@@ -1,6 +1,8 @@
+<!--Thanks for Registering page - TP,WM-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Reference links for Stylesheets - TP-->
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,16 +11,16 @@
 </head>
 <body>
     <header>Thank you for Registering with Travel Experts!</header>
+    <!--Displays submitted information and thanks them for registering - WM -->
     <h2>Thank you for registering, <%=CustFirstName%> <%=CustLastName%>!</h2>
-    
+    <!--Displays the customers package information - TM, modified for this page by WM -->
     <% packageResult.forEach((packages) => {
+        <!--array containing month abbreviations for date formatting - WM -->
         var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+        <!--Checks if a package was selected, so if they registered without a package it wont display - WM-->
         if(packages.PackageId > 0){%>  
             <h3>You've signed up for:</h3>
-    <table class="thanks">
-        
-
-				
+    <table.thanks>		
             <tr>
                 <td><%= packages.PkgName %></td><br />
                 <td>Starts: <%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear()%></td><br />
@@ -28,6 +30,7 @@
     </table.register>
     <h4>Have a great trip!</h4>
     <%  }}); %>
+    <!--Navigation Bar - TP,WM,TM-->
     <nav>
         <a href="index">Home <img src="arr1.gif" /></a>
         

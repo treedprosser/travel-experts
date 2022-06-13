@@ -3,6 +3,7 @@ TO DO:
     FINISHING TOUCHES:
         STYLING
             make it look good
+                
         CODE
             commenting and 'beautifying'
 

@@ -1,6 +1,8 @@
+<!--Contact Page - TP-->
 <!DOCTYPE html>
 <html>
 	<head><title>Travel Agents</title>
+		<!-- Reference links for stylesheets-->
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +15,7 @@
 		<header>Meet The Travel Experts!</header>
 		<h4 class="agencies">Agency Information:</h4>
 		<div class="agency-container">
+			<!--Displays information for each agency location - TP-->
 			<% result.forEach((agency) => { %>
 				<div class="agency-info">
 					<p><strong><%= agency.AgncyCity + ", " + agency.AgncyProv %></strong></p>
@@ -26,6 +29,7 @@
 		<br>
 		<h4 class="agents">Calgary Agents:</h4>
 		<div class="agent-container">
+			<!--Displays contact information for each Calgary agent - TP-->
 			<% cgyResult.forEach((agent) => { %>
 				<div class="agent-info">
 					<p><%= agent.AgtFirstName +  " " + agent.AgtLastName %></p>
@@ -37,6 +41,7 @@
 		<br>
 		<h4 class="agents">Okotoks Agents:</h4>
 		<div class="agent-container">
+			<!--Displays contact information for each Okotoks agent - TP-->
 			<% okoResult.forEach((agent) => { %>
 				<div class="agent-info">
 					<p><%= agent.AgtFirstName +  " " + agent.AgtLastName %></p>
@@ -45,6 +50,7 @@
 				</div>
 			<%  }); %>
 		</div><br /><br /><br /><br /><br />
+		<!--Navigation Bar -WM,TP,TM-->
 		<nav>
 			<a href="index">Home <img src="arr1.gif" /></a>
 			
