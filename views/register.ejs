@@ -1,20 +1,22 @@
+<!--Registration Page WM,TP-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Register</title>
+    <!-- Reference links for stylesheets-->
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <script>
-    // validates form based on required fields
+    // validates form based on required fields - TP
     function validate(myForm) {
     let fname = document.getElementById("firstname");
     let lname = document.getElementById("lastname");
     let postal = document.getElementById("postalcode");
-    // regular expression to match postal code
+    // regular expression to match postal code - TP
     let regex = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;
-    // check for valid data in form fields before submitting
+    // check for valid data in form fields before submitting - TP
     if (fname.value == "" || lname.value == "") {
         alert("Please enter your first and last name");
         fname.focus();
@@ -37,6 +39,7 @@
     <header>Customer Registration</header>
     <!-- Registration form with JS script attached for validation -->
     <form action="postregister" method="post" id="customerForm">
+        <!--EJS used to create a hidden form input containing package info to post to thanks page - WM-->
         <%packageResult.forEach((packages)=>{ %>
             <input type="text" name="PackageId" hidden="hidden" value="<%=packages.PackageId%>">
         <% }); %>
@@ -76,19 +79,19 @@
         <label for="agent">Agent Id: </label>
         <select name="AgentId" id="agent">
             <option value="">Select Agent Id</option>
+            <!--Populates a list of agents for registeree to choose from-->
             <% agentsResult.forEach((agent)=>{%>
             <option value="<%=agent.AgentId%>"><%=agent.AgtFirstName%> <%=agent.AgtLastName%></option>
             <% }); %> </select><br />
         <button type="submit" onclick="return validate(this.form);">Submit</button>
         <button type="reset" onclick="return confirm('Do you want to reset the form?');">Reset</button>
     </form>
+    <!-- Generates a table to display the selected travel package information - TM - modified for this page by WM -->
     <% packageResult.forEach((packages) => {
         var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
         %>  
     <table class="register">
-        <th>Your Package</th><br />
-
-				
+        <th>Your Package</th><br />		
             <tr>
                 <td><%= packages.PkgName %></td><br />
                 <td>Starts: <%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear()%></td><br />
@@ -96,6 +99,7 @@
                 <td>Price: $<%= packages.PkgBasePrice %></td><br />
                 <%  }); %>
     </table.register>
+    <!--Navigation menu - WM,TP,TM-->
     <nav>
         <a href="index">Home <img src="arr1.gif" /></a>
         

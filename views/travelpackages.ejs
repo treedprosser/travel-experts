@@ -1,7 +1,9 @@
+<!--Travel Packages -TM -->
 <!DOCTYPE html>
 <html>
 	<head>
 	<title>Travel Packages</title>
+	<!--Reference links for style pages -->
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,23 +13,28 @@
 	<header>Pick your destination!</header>
 		<h4 class="packages">Travel Packages:</h4>
 		<table border="1">
+			<!-- Table of available Travel packages populated from database - TM -->
 		<th>Package Name</th>
 				<th>Package Start Date</th>
 				<th>Package End Date</th>
 				<th>Package Base Price</th>
 				<th>Order Option</th>
+			<!--Populates table with info for each package on the database - TM -->
 			<% tpResult.forEach((packages) => { let currentDate = new Date().getTime();
 				var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
 				%>
 				<tr>
 					<td><%= packages.PkgName %></td>
+					<!--If statement to flag expired packages and display them as RED and unavailable - TP -->
 					<td <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> class="expired" <% } %>><%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear() %></td>
 					<td><%= month[packages.PkgEndDate.getMonth()] + "-" + packages.PkgEndDate.getDate() + "-" + packages.PkgEndDate.getFullYear() %></td>
 					<td>$<%= packages.PkgBasePrice %></td>
+					<!-- If statement to disable buttons on expired travel packages - WM -->
 					<td><button  <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> disabled="disabled" <% } %> onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
 				</tr>
 			<%  }); %>
 		</table>
+		<!-- Navigation Bar -WM,TP,TM -->
 		<nav>
 			<a href="index">Home <img src="arr1.gif" /></a>
 			
