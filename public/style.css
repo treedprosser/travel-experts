@@ -115,7 +115,7 @@ td {
     border-radius: 20px;
 }
 /******** Contact Page ********/
-/*Style formatting specific to the Contact page by WB*/
+/*Style formatting specific to the Contact page by TP*/
 .agencies, .agents {
     text-align: center;
     text-decoration: underline;
@@ -150,7 +150,7 @@ td {
     text-decoration: underline;
 }
 /******** Navigation Bar on Each Page ********/
-/*Style formatting specific to the Navigation Bar page by TP*/
+/*Style formatting specific to the Navigation Bar page by WM, TP*/
 nav{
     position:fixed;
     bottom:5%;
