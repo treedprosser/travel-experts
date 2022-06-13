@@ -9,13 +9,14 @@
 </head>
 <body>
     <header>Thank you for Registering with Travel Experts!</header>
-    <h2>Thanks for registering <%=CustFirstName%> <%=CustLastName%>!</h2>
-    <h3>You've signed up for:</h3>
+    <h2>Thank you for registering, <%=CustFirstName%> <%=CustLastName%>!</h2>
+    
     <% packageResult.forEach((packages) => {
         var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
-        %>  
+        if(packages.PackageId > 0){%>  
+            <h3>You've signed up for:</h3>
     <table.register border="1">
-        <th>Your Package</th><br />
+        
 
 				
             <tr>
@@ -23,9 +24,10 @@
                 <td>Starts: <%= month[packages.PkgStartDate.getMonth()] + "-" + packages.PkgStartDate.getDate() + "-" + packages.PkgStartDate.getFullYear()%></td><br />
                 <td>Ends: <%= month[packages.PkgEndDate.getMonth()] + "-" + packages.PkgEndDate.getDate() + "-" + packages.PkgEndDate.getFullYear() %></td><br />
                 <td>Price: $<%= packages.PkgBasePrice %></td><br />
-                <%  }); %>
+                
     </table.register>
     <h4>Have a great trip!</h4>
+    <%  }}); %>
     <nav>
         <a href="index">Home <img src="arr1.gif" /></a>
         
