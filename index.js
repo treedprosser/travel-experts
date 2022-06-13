@@ -46,7 +46,7 @@ app.get("/contact", (req, res) => {
     let con = getConnection();
     con.connect((err) => {
         if (err) throw err;
-        console.log("connection successful");
+        // console.log("connection successful");
         con.query("select * from agencies", (err, result) => {
             if (err) throw err;
             con.query("select * from agents where AgencyId=1", (err, cgyResult) => {
