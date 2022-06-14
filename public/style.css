@@ -3,25 +3,25 @@ Team 4: Tallis MacDonald, Woody McBeath, Trevor Prosser
 Code Contributors: TM, WB, TP
 */
 /*Defines the HomePage Header, Body, paragraph, and form for layout, coloring, and font styles*/
-body{
-    background-color:rgb(219, 215, 174);
+body {
+    background-color: #CCF3EE /* mint green rgb(219, 215, 174); */
 }
-header{
-    float: center;
+header {
     margin-top: 1%;
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 1%;
     width: 90%;
-    background-color:lightgreen;
+    background-color: #3E8E7E; /*deep seafoam*/
     border-radius: 5px;
     text-align: center;
     font-family: "Courgette", cursive;
     font-weight: bold;
-    font-size:225%;
+    font-size: 225%;
     padding-top: 2%;
     padding-bottom: 2%;
-    border:5px outset;
+    border: 5px outset;
+    color: #362222; /*burnt deep brown*/
 }
 p{
     float: left;
@@ -30,39 +30,46 @@ p{
     padding-right: 1%;
     margin: 1%;
 }
-form{
+form {
     float: left;
     text-align: left;
-    padding-left:1%;
-    padding-right:1%;
-    font-size:110%;
-    margin:1%;
-    background-color: cyan;
-    width:30%;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 110%;
+    margin: 1%;
+    background-color: #E5CB9F; /*sunset orange*/
+    width: 30%;
     border: 5px groove;
+    color: #5E454B;
 }
 /******* Travel Packages *******/
 /*Style formatting specific to the TravelPackages page to account for the table layout, colors, and font style by TM*/
 table {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     float: center;
     border: 1px solid;
     table-layout: auto;
     width: 100%;
-    background-color: #CCF3EE;
+    background-color: #CCF3EE; /*mint green*/
     padding: 3px;
-    color: 53BF9D;
     margin-left: auto;
     margin-right: auto;
-    border-top-color: red;
-    border-style: none;
+    border-top-color: #E5CB9F; /*burnt yellow*/
+    border-style: onset;
 }
 
 th {
-    color: green;
+    color: #CCF3EE;
+    text-align: center;
     font-weight: 700;
     height: 20px;
-    border-style: none;
+    border-style: onset;
+    background-color: #3E8E7E; /*deep sea green*/
+    color: #362222; /* deep brown*/
+    font-family: Helvetica, sans-serif;
+}
+center {
+       text-align: center;
 }
 
 .expired {
@@ -73,17 +80,19 @@ th {
     text-align: center;
     text-decoration: underline;
     font-weight: bold;
-    color: red;
+    color: #362222; /* deep brown*/
     font-size: 1.5rem;
 }
 .packages-container {
     display: flex;
     justify-content: space-around;
 }
-.register{
-    background-color:#82a8df;
-    float:left;
-    width:40%;
+/*Styling for pop-window*/
+.register {
+    background-color: #3E8E7E; /*aqua blue*/
+    float: left;
+    width: 40%;
+    color: #362222; /* deep brown*/
 }
 td {
     padding: 5px;
@@ -92,7 +101,7 @@ td {
     color: red;
     font-weight: bold;
 }
-/* Stles for image carousel on travel pacakges page by TP */
+/* Styles for image carousel on travel packages page by TP */
 .slider-container {
     display: grid;
     place-items: center;
@@ -154,6 +163,7 @@ td {
     display: flex;
     justify-content: center;
     font-size: 2rem;
+    color: #362222; /* deep brown*/
 }
 .about p {
     width: 80%;
@@ -174,6 +184,7 @@ td {
     text-align: center;
     text-decoration: underline;
     font-size: 1.5rem;
+    color: #362222; /*deep brown*/
 }
 .agency-container, .agent-container {
     display: flex;
@@ -186,30 +197,33 @@ td {
     justify-content: space-between;
     padding: 10px;
     border-radius: 5px;
+    
 }
 .agency-info {
-    background-color: #ECB390;
+    background-color: #7CD1B8; /*aqua blue*/
     width: 40%;
     font-family: 'Raleway', sans-serif;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    color: #362222; /*deep brown*/
 }
 .agent-info {
-    background-color: #94B49F;
+    background-color: #FABB51;  /*sunset yellow*/
     width: 16%;
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.2rem;
     font-style: bold;
+    color: #362222;
 }
 .phone {
     text-decoration: underline;
 }
 /******** Navigation Bar on Each Page ********/
 /*Style formatting specific to the Navigation Bar page by WM, TP*/
-nav{
-    position:fixed;
-    bottom:5%;
-    left:1%;
-    width:80%;
+nav {
+    position: fixed;
+    bottom: 5%;
+    left: 1%;
+    width: 80%;
     margin-top: 1%;
     margin-left: 9%;
     margin-right: 9%;
@@ -220,9 +234,10 @@ nav{
     font-family: "Helvetica Neue", sans-serif;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    background-color: bisque;
-    border-radius:10px;
+    background-color: #FFE59D;
+    border-radius: 10px;
     border: 3px groove;
+    color: #362222;
 }
 nav a {
     text-decoration: none;
