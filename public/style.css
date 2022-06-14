@@ -207,6 +207,14 @@ td {
 .phone {
     text-decoration: underline;
 }
+
+/* Style items on thank you page */
+.thanks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /******** Navigation Bar on Each Page ********/
 /*Style formatting specific to the Navigation Bar page by WM, TP*/
 nav {
