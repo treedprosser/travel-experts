@@ -23,6 +23,7 @@
 		<!--Populates table with info for each package on the database - TM -->
 		<% tpResult.forEach((packages) => { let currentDate = new Date().getTime();
 			var month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+			if (currentDate < new Date(packages.PkgEndDate).getTime()) { %>
 		%>
 		<tr>
 			<td><%= packages.PkgName %></td>
@@ -33,7 +34,7 @@
 			<!-- If statement to disable buttons on expired travel packages - WM -->
 			<td><button  <% if (currentDate > new Date(packages.PkgStartDate).getTime()) { %> disabled="disabled" <% } %> onclick="window.location.href='/register?PackageId=<%=packages.PackageId%>'">Order Package</button></td>	
 		</tr>
-		<%  }); %>
+		<%  }}); %>
 	</table>
 	<br>
 	<br>
