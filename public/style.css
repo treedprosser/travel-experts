@@ -33,7 +33,7 @@ p{
 /*Style Formatting for the Customer Registration Form done by WM*/
 form {
     float: left;
-    text-align: left;
+    text-align: justify;
     padding-left: 1%;
     padding-right: 1%;
     font-size: 110%;
@@ -41,7 +41,13 @@ form {
     background-color: #E5CB9F; /*sunset orange*/
     width: 30%;
     border: 5px groove;
-    color: #362222 
+    color: #362222;
+    padding:1%;
+}
+label{
+    text-align:left;
+    width:250px;
+    display:inline-block;
 }
 /******* Travel Packages *******/
 /*Style formatting specific to the TravelPackages page to account for the table layout, colors, and font style by TM*/
@@ -87,7 +93,7 @@ th {
 .register {
     background-color: #3E8E7E; /*aqua blue*/
     float: left;
-    width: 40%;
+    width: 50%;
     color: #362222; /* deep brown*/
 }
 td {
