@@ -30,6 +30,7 @@ p{
     padding-right: 1%;
     margin: 1%;
 }
+/*Style Formatting for the Customer Registration Form done by WM*/
 form {
     float: left;
     text-align: left;
@@ -40,12 +41,12 @@ form {
     background-color: #E5CB9F; /*sunset orange*/
     width: 30%;
     border: 5px groove;
-    color: #5E454B;
+    color: #362222 
 }
 /******* Travel Packages *******/
 /*Style formatting specific to the TravelPackages page to account for the table layout, colors, and font style by TM*/
 table {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
     float: center;
     border: 1px solid;
     table-layout: auto;
@@ -54,10 +55,9 @@ table {
     padding: 3px;
     margin-left: auto;
     margin-right: auto;
-    border-top-color: #E5CB9F; /*burnt yellow*/
+    border-top-color: #3E8E7E; /*deep sea foam*/
     border-style: onset;
 }
-
 th {
     color: #CCF3EE;
     text-align: center;
@@ -66,12 +66,8 @@ th {
     border-style: onset;
     background-color: #3E8E7E; /*deep sea green*/
     color: #362222; /* deep brown*/
-    font-family: Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
-center {
-       text-align: center;
-}
-
 .expired {
     color: red;
     font-weight: bold;
@@ -114,7 +110,6 @@ td {
     overflow: hidden;
     border-radius: 15px;
 }
-
 .slide {
     width: 100%;
     max-width: 800px;
@@ -122,13 +117,11 @@ td {
     position: absolute;
     transition: all 0.5s;
 }
-  
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-  
+} 
 .btn {
     position: absolute;
     width: 40px;
@@ -140,17 +133,14 @@ td {
     cursor: pointer;
     background-color: #fff;
     font-size: 18px;
-}
-  
+} 
 .btn:active {
     transform: scale(1.1);
 }
-  
 .btn-prev {
     top: 45%;
     left: 2%;
 }
-  
 .btn-next {
     top: 45%;
     right: 2%;
@@ -177,6 +167,7 @@ td {
     height: 200px;
     width: 200px;
     border-radius: 20px;
+  
 }
 /******** Contact Page ********/
 /*Style formatting specific to the Contact page by TP*/
@@ -196,8 +187,7 @@ td {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
 .agency-info {
     background-color: #7CD1B8; /*aqua blue*/
@@ -239,10 +229,10 @@ nav {
     border: 3px groove;
     color: #362222;
 }
-nav a {
-    text-decoration: none;
-    color: #1363DF;
-}
+    nav a {
+        text-decoration: none;
+        color: #362222;
+    }
 nav, a:hover{
     color: #47B5FF;
 }
