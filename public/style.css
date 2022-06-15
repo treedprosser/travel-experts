@@ -206,12 +206,13 @@ td {
     background-color: #FABB51;  /*sunset yellow*/
     width: 16%;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
     font-style: bold;
     color: #362222;
 }
 .phone {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* Style items on thank you page */
